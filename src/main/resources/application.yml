@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: edusaas-backend
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/edusaas}
+    username: ${DB_USERNAME:edusaas}
+    password: ${DB_PASSWORD:edusaas}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  flyway:
+    enabled: false
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  show-actuator: false
+
+logging:
+  level:
+    com.edusaas: DEBUG
+    org.springframework: INFO
+    org.hibernate.SQL: INFO
