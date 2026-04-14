@@ -1,6 +1,6 @@
 # EduSaaS Backend
 
-![CI](https://github.com/TON-USERNAME/edusaas-backend/actions/workflows/ci.yml/badge.svg?branch=develop)
+![CI](https://github.com/waufo/edusaas-backend/actions/workflows/ci.yml/badge.svg?branch=develop)
 
 Plateforme SaaS de gestion scolaire — Java 21 · Spring Boot 3 · Clean Architecture · Kafka · Keycloak
 
@@ -22,7 +22,7 @@ Plateforme SaaS de gestion scolaire — Java 21 · Spring Boot 3 · Clean Archit
 
 ```bash
 # 1. Cloner le repo
-git clone git@github.com:TON-USERNAME/edusaas-backend.git
+git clone git@github.com:waufo/edusaas-backend.git
 cd edusaas-backend
 
 # 2. Copier les variables d'environnement
@@ -41,3 +41,28 @@ mvn spring-boot:run
 - Mailhog : http://localhost:8025
 
 ## Architecture
+src/main/java/com/edusaas/
+├── domain/          # Entités, Value Objects — aucune dépendance externe
+│   ├── model/
+│   └── port/
+│       ├── in/      # Interfaces Use Cases
+│       └── out/     # Interfaces Repositories
+├── application/
+│   └── service/     # Implémentation des Use Cases
+├── adapter/
+│   ├── in/web/      # Controllers REST
+│   └── out/persistence/ # Repositories JPA
+└── infrastructure/
+└── config/      # Configuration Spring
+
+## Modules fonctionnels
+| Module | Statut |
+|--------|--------|
+| Fondations & Infrastructure | ✅ Sprint 1 |
+| Authentification & Keycloak | 🔄 Sprint 2 |
+| Module Academic | ⏳ Sprint 3 |
+| Module Students | ⏳ Sprint 3 |
+| Module Grades | ⏳ Sprint 4 |
+| Module Attendance & QR Code | ⏳ Sprint 4 |
+| Angular Web Frontend | ⏳ Sprint 5 |
+| Flutter Mobile Apps | ⏳ Sprint 6 |
