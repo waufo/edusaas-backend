@@ -4,7 +4,7 @@
 
 | Type | Format | Exemple |
 |---|---|---|
-| Nouvelle feature | `feature/EDU-XX-description` | `feature/EDU-1-spring-boot-init` |
+| Nouvelle feature | `feature/EDU-XX-description` | `feature/EDU-11-spring-boot-init` |
 | Correction bug | `fix/EDU-XX-description` | `fix/EDU-12-jwt-expiration` |
 | Hotfix production | `hotfix/EDU-XX-description` | `hotfix/EDU-34-db-connection` |
 | Chore / config | `chore/EDU-XX-description` | `chore/EDU-5-github-actions` |
