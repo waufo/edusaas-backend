@@ -3,7 +3,7 @@ spring:
     name: edusaas-backend
 
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/edusaas}
+    url: ${DB_URL:jdbc:postgresql://localhost:5434/edusaas}
     username: ${DB_USERNAME:edusaas}
     password: ${DB_PASSWORD:edusaas}
     driver-class-name: org.postgresql.Driver
